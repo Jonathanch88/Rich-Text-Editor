@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/7ee2bbc023.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Rich Text Editor</title>
+  </head>
+  <body onload="enableEditMode();">
+    <div>
+      <button onclick="execCmd('bold');"><i class="fas fa-bold"></i></button>
+    </div>
+    <iframe
+      name="richTextField"
+      style="width: 1000px; height: 500px;"
+    ></iframe>
+    <script type="text/javascript">
+         
+         function enableEditMode(){
+          richTextField.document.designMode = "on";
+         }
+
+         function execCmd(command){
+          richTextField.document.execCommand(command, false , null);
+         }
+    </script>
+  </body>
+</html>
