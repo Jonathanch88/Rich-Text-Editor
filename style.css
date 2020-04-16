@@ -1,0 +1,12 @@
+
+body{
+  width: 100%;
+  height: 600px;
+  background: linear-gradient(120deg , #f5d8d8 , #8a8aee );
+  
+}
+iframe {
+  
+  width: 80%;
+  height: 500px;
+}
