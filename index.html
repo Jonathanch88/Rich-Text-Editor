@@ -21,17 +21,18 @@
       <button onclick="execCmd('justifyRight');"><i class="fas fa-align-right"></i></button>
       <button onclick="execCmd('justifyFull');"><i class="fas fa-align-justify"></i></button>
       <button onclick="execCmd('copy');"><i class="fas fa-copy"></i></button>
+      <button onclick="execCmd('paste');"><i class="fas fa-paste"></i></button>
       <button onclick="execCmd('cut');"><i class="fas fa-cut"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-indent"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-dedent"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-subscript"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-superscript"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-undo"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-repeat"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-list-ul"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-list-ol"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-paragraph"></i></button>
-      <select>
+      <button onclick="execCmd('indent');"><i class="fas fa-indent"></i></button>
+      <button onclick="execCmd('outdent');"><i class="fas fa-outdent"></i></button>
+      <button onclick="execCmd('subscript');"><i class="fas fa-subscript"></i></button>
+      <button onclick="execCmd('superscript');"><i class="fas fa-superscript"></i></button>
+      <button onclick="execCmd('undo');"><i class="fas fa-undo"></i></button>
+      <button onclick="execCmd('redo');"><i class="fas fa-redo"></i></button>
+      <button onclick="execCmd('insertUnorderedList');"><i class="fas fa-list-ul"></i></button>
+      <button onclick="execCmd('insertOrderedList');"><i class="fas fa-list-ol"></i></button>
+      <button onclick="execCmd('insertParagraph');"><i class="fas fa-paragraph"></i></button>
+      <select onclick="execCommandWithArg('formatBlock', this.value)">
         <option value="H1">H1</option>
         <option value="H2">H2</option>
         <option value="H3">H3</option>
@@ -39,21 +40,14 @@
         <option value="H5">H5</option>
         <option value="H6">H6</option>
       </select>
-      <button onclick="execCmd('bold');">HR</button>
-      <button onclick="execCmd('bold');"><i class="fas fa-link"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-unlink"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-code"></i></button>
-      <button onclick="execCmd('bold');">Toggle Edit</button>
-      <br>
-      <button onclick="execCmd('bold');"><i class="fas fa-paragraph"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-paragraph"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-paragraph"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-paragraph"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-paragraph"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-paragraph"></i></button>
-      <button onclick="execCmd('bold');"><i class="fas fa-paragraph"></i></button>
+      <button onclick="execCmd('insertHorizontalRule');">HR</button>
+      <button onclick="execCmd('createLink', prompt('Enter a URL','http://'));"><i class="fas fa-link"></i></button>
+      <button onclick="execCmd('unlink');"><i class="fas fa-unlink"></i></button>
+      <button onclick="toggleSource();"><i class="fas fa-code"></i></button>
+      <button onclick="toggleEdit();">Toggle Edit</button>
     </div>
-    <select>
+    <br> 
+    <select onclick="execCommandWithArg('fontName', this.value)">
       <option value="Arial">Arial</option>
       <option value="Comic Sans MS">Comic Sans MS</option>
       <option value="Courier">Courier</option>
@@ -62,7 +56,7 @@
       <option value="Times New Roman">Times New Roman</option>
       <option value="Verdana">Verdana</option>
     </select>
-    <select>
+    <select >
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -70,10 +64,10 @@
       <option value="5">5</option>
       <option value="6">6</option>
     </select>
-     Fore color: <input type="color"/>
-     Background: <input type="color"/>
-     <button onclick="execCmd('bold');"><i class="fas fa-file-image-o"></i></button>
-     <button onclick="execCmd('bold');">Select All</button>
+    Fore color: <input type="color" onchange="execCommandWithArg('foreColor',this.value)" />
+    Background: <input type="color" onchange="execCommandWithArg('backColor',this.value)"/>
+     <button onclick="execCmd('insertImage', prompt('Enter the image URL',''));"><i class="fas fa-image"></i></button>
+     <button onclick="execCmd('selecAll');">Select All</button>
 
 
 
@@ -83,3 +77,4 @@
     <script src="app.js "></script>
   </body>
 </html>
+
