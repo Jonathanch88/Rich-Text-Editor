@@ -6,4 +6,8 @@ function enableEditMode(){
 
  function execCmd(command){
   richTextField.document.execCommand(command, false , null);
+  console.log(command);
  }
+function execCommandWithArg(command, arg){
+  richTextField.document.execCommand(command, false, arg);
+}
