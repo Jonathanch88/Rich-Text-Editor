@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -56,7 +56,7 @@
       <option value="Times New Roman">Times New Roman</option>
       <option value="Verdana">Verdana</option>
     </select>
-    <select >
+    <select onclick="execCommandWithArg('fontSize', this.value)">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -66,13 +66,8 @@
     </select>
     Fore color: <input type="color" onchange="execCommandWithArg('foreColor',this.value)" />
     Background: <input type="color" onchange="execCommandWithArg('backColor',this.value)"/>
-     <button onclick="execCmd('insertImage', prompt('Enter the image URL',''));"><i class="fas fa-image"></i></button>
+     <button onclick="execCommandWithArg('insertImage', prompt('Enter the image URL',''));"><i class="fas fa-image"></i></button>
      <button onclick="execCmd('selecAll');">Select All</button>
-
-
-
-
-
     <iframe name="richTextField"></iframe>
     <script src="app.js "></script>
   </body>
