@@ -1,24 +1,20 @@
+let showingSourceCode = false;
+let isInEditMode = true;
 
-var showingSourceCode = false;
-var isInEditMode = true;
-
-
-
-//function to enable edit Mode. 
-
-function enableEditMode() {
+const enableEditMode = ()=> {
   richTextField.document.designMode = "on";
 }
 
-function execCmd(command) {
+const execCmd = (command) => {
   richTextField.document.execCommand(command, false, null);
   console.log(command);
 }
-function execCommandWithArg(command, arg) {
+
+const execCommandWithArg = (command, arg)=> {
   richTextField.document.execCommand(command, false, arg);
 }
 
-function toggleSource() {
+const toggleSource = ()=> {
   if (showingSourceCode) {
     richTextField.document.getElementsByTagName('body')[0].innerHtml = richTextField.document.getElementsByTagName('body')[0].textContent;
     showingSourceCode = false;
@@ -28,10 +24,9 @@ function toggleSource() {
     showingSourceCode = true;
   }
 
-
 }
 
-function toggleEdit() {
+const toggleEdit = () => {
   if(isInEditMode){
     richTextField.document.designMode = "off";
     isInEditMode = false;
